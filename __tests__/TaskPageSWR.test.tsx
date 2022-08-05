@@ -7,9 +7,10 @@ import TaskPage from '../pages/task-page'
 import { TASK } from '../types/Types'
 
 const server = setupServer(
-  rest.get(
-    'https://jsonplaceholder.typicode.com/todos/?_limit=10',
-    (req, res, ctx) => {
+  rest.get('https://jsonplaceholder.typicode.com/todos/', (req, res, ctx) => {
+    const query = req.url.searchParams
+    const _limit = query.get('_limit')
+    if (_limit === '10') {
       return res(
         ctx.status(200),
         ctx.json([
@@ -28,7 +29,7 @@ const server = setupServer(
         ])
       )
     }
-  )
+  })
 )
 
 beforeAll(() => {
@@ -76,9 +77,13 @@ describe(`Todos page / useSWR`, () => {
   it('Should render Error text when fetch failed', async () => {
     server.use(
       rest.get(
-        'https://jsonplaceholder.typicode.com/todos/?_limit=10',
+        'https://jsonplaceholder.typicode.com/todos/',
         (req, res, ctx) => {
-          return res(ctx.status(400))
+          const query = req.url.searchParams
+          const _limit = query.get('_limit')
+          if (_limit === '10') {
+            return res(ctx.status(400))
+          }
         }
       )
     )
