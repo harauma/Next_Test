@@ -19,3 +19,17 @@ export interface TASK {
   title: string
   completed: boolean
 }
+
+interface TAG {
+  id: number
+  name: string
+}
+
+export interface POST_DJANGO_API {
+  id: number
+  title: string
+  content: string
+  username: string
+  tags: TAG[]
+  created_at: string
+}

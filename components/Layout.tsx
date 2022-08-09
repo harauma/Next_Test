@@ -56,6 +56,22 @@ const Layout: React.FC<TITLE> = ({ children, title = 'Next.js' }) => {
                   Todos
                 </a>
               </Link>
+              <Link href="/new-blog-page">
+                <a
+                  data-testid="new-blog-nav"
+                  className="textgray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                >
+                  NewBlog
+                </a>
+              </Link>
+              <Link href="/admin-page">
+                <a
+                  data-testid="admin-nav"
+                  className="textgray-300 hover:bg-gray-700 px-3 py-2 rounded"
+                >
+                  Admin
+                </a>
+              </Link>
             </div>
           </div>
         </nav>
