@@ -12,7 +12,7 @@ interface STATICPROPS {
   posts: POST_DJANGO_API[]
 }
 
-const NewBlogPage: React.FC<STATICPROPS> = ({ posts }) => {
+const DjangoBlogPage: React.FC<STATICPROPS> = ({ posts }) => {
   const [hasToken, setHasToken] = useState(false)
   const logout = () => {
     cookie.remove('access_token')
@@ -38,13 +38,13 @@ const NewBlogPage: React.FC<STATICPROPS> = ({ posts }) => {
   }, [])
 
   return (
-    <Layout title="NewBlog">
-      <p className="text-4xl mb-10">new blog page</p>
+    <Layout title="DjangoBlog">
+      <p className="text-4xl mb-10">django blog page</p>
       <ul>
         {posts &&
           posts.map((post) => (
             <li key={post.id}>
-              <Link href={`/posts/${post.id}`}>
+              <Link href={`/django-posts/${post.id}`}>
                 <a className="customer-pointer border-b border-gray-500 hover:bg-gray-300">
                   {post.title}
                 </a>
@@ -93,7 +93,7 @@ const NewBlogPage: React.FC<STATICPROPS> = ({ posts }) => {
     </Layout>
   )
 }
-export default NewBlogPage
+export default DjangoBlogPage
 
 export const getStaticProps: GetStaticProps = async () => {
   const posts = await getAllPostDataAtDjangoApi()

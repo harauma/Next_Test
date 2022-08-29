@@ -18,10 +18,10 @@ const Layout: React.FC<TITLE> = ({ children, title = 'Next.js' }) => {
             <div className="flex space-x-4">
               <Link href="/">
                 <a
-                  data-testid="home-nav"
+                  data-testid="django-blog-nav"
                   className="textgray-300 hover:bg-gray-700 px-3 py-2 rounded"
                 >
-                  Home
+                  DjangoBlog
                 </a>
               </Link>
               <Link href="/blog-page">
@@ -54,14 +54,6 @@ const Layout: React.FC<TITLE> = ({ children, title = 'Next.js' }) => {
                   className="textgray-300 hover:bg-gray-700 px-3 py-2 rounded"
                 >
                   Todos
-                </a>
-              </Link>
-              <Link href="/new-blog-page">
-                <a
-                  data-testid="new-blog-nav"
-                  className="textgray-300 hover:bg-gray-700 px-3 py-2 rounded"
-                >
-                  NewBlog
                 </a>
               </Link>
               <Link href="/admin-page">
