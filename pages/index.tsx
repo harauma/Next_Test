@@ -54,7 +54,7 @@ const DjangoBlogPage: React.FC<STATICPROPS> = ({ posts }) => {
                   data-testid={`btn-${post.id}`}
                   onClick={() => deletePost(post.id)}
                   xmlns="http://www.w3.org/2000/svg"
-                  className="h-6 w-6 ml-10 float-right cusor-pointer"
+                  className="h-6 w-6 ml-10 float-right cursor-pointer"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor"
@@ -76,7 +76,7 @@ const DjangoBlogPage: React.FC<STATICPROPS> = ({ posts }) => {
           data-testid="logout-icon"
           onClick={logout}
           xmlns="http://www.w3.org/2000/svg"
-          className="h-6 w-6 mt-10 cusor-pointer"
+          className="h-6 w-6 mt-10 cursor-pointer"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
