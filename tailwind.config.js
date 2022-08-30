@@ -5,10 +5,10 @@ module.exports = {
   ],
   darkMode: false,
   theme: {
-      extend: {},
+    extend: {},
   },
   variants: {
-      extend: {},
+    extend: { opacity: ['disabled'] },
   },
   plugins: [],
 }
