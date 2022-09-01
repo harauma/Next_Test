@@ -64,7 +64,7 @@ const Auth: React.FC = () => {
             type="text"
             required
             className="px-3 py-2 border border-gray-300"
-            placeholder="UserName"
+            placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
